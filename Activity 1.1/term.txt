@@ -1,0 +1,38 @@
+Last login: Wed Apr  1 19:18:59 on ttys000
+anantha-6459@anantha-6459 ~ % sqlite3
+SQLite version 3.51.0 2025-06-12 13:14:41
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> .open Employee_Records.db
+sqlite> CREATE TABLE Employee_Records(Name TEXT,ID INTEGER,Work Experience INTEGER);
+sqlite> INSERT INTO Employee_Records VALUES('Riona',664,6);
+sqlite> INSERT INTO Employee_Records VALUES('Rini',648,4);
+sqlite> INSERT INTO Employee_Records VALUES('Pragathi',662,8);
+sqlite> INSERT INTO Employee_Records VALUES('Prisha',660,7);
+sqlite> INSERT INTO Employee_Records VALUES('Lakshita',646,5);
+sqlite> SELECT * FROM Employee_Records;
+Riona|664|6
+Rini|648|4
+Pragathi|662|8
+Prisha|660|7
+Lakshita|646|5
+sqlite> CREATE TABLE Address(Name TEXT,Address TEXT);
+sqlite> INSERT INTO Address VALUES('Riona','Chennai');
+sqlite> INSERT INTO Address VALUES('Rini','Bangalore');
+sqlite> INSERT INTO Address VALUES('Pragathi','Jaipur');
+sqlite> INSERT INTO Address VALUES('Prisha','Delhi');
+sqlite> INSERT INTO Address VALUES('Lakshita','Hyderbad');
+sqlite> SELECT * FROM Address;
+Riona|Chennai
+Rini|Banglore
+Pragathi|Jaipur
+Prisha|Delhi
+Lakshita|Hyderbad
+sqlite> SELECT Employee_Records.Name,Address.Address FROM Employee_Records INNER JOIN Age ON Employee_Records.Name=Address.Address;
+Riona|Riona
+Rini|Rini
+Pragathi|Pragathi
+Prisha|Prisha
+Lakshita|Lakshita
+sqlite> 
