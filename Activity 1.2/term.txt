@@ -1,0 +1,25 @@
+Last login: Thu Apr  2 19:42:56 on ttys000
+anantha-6459@anantha-6459 ~ % sqlite3
+SQLite version 3.51.0 2025-06-12 13:14:41
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> .open Favourite_Things.db
+sqlite> CREATE TABLE Favourite_Things(Color TEXT, Food TEXT, Number INTEGER);
+sqlite> INSERT INTO Favourite_Things VALUES('Pink', 'Pizza', 68);
+sqlite> INSERT INTO Favourite_Things VALUES('Green', 'Pasta', 64);
+sqlite> INSERT INTO Favourite_Things VALUES('Blue', 'Noodles', 46);
+sqlite> INSERT INTO Favourite_Things VALUES('Yellow', 'Burger', 64);
+sqlite> INSERT INTO Favourite_Things VALUES('Red', 'Fries', 66);
+sqlite> INSERT INTO Favourite_Things VALUES('Orange', 'Brownies', 62);
+sqlite> SELECT * FROM Favourite_Things WHERE Number=64 AND Color='Yellow';
+Yellow|Burger|64
+sqlite> SELECT * FROM Favourite_Things WHERE Number=64 OR Color='Blue';
+Green|Pasta|64
+Blue|Noodles|46
+Yellow|Burger|64
+sqlite> SELECT MIN(Number) FROM Favourite_Things;
+46
+sqlite> SELECT MAX(Number) FROM Favourite_Things;
+68
+sqlite>
